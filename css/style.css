@@ -1,0 +1,102 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+ .no-js {
+  visibility: hidden;
+  opacity: 0;
+ }
+ 
+ .js {
+  visibility: visible;
+  opacity: 1;
+  transition: all 3s ease-in;
+ }
+.img-wrapper {
+  padding-top: 1%;
+}
+
+[style*="--aspect-ratio"] > :first-child { width: 100%; }
+[style*="--aspect-ratio"] > img { height: auto; }
+
+@supports (--custom:property) {
+  [style*="--aspect-ratio"] { position: relative; }
+    
+  [style*="--aspect-ratio"]::before {
+    content: "";
+    display: block;
+    padding-bottom: calc(100% / (var(--aspect-ratio)));
+  }
+    
+  [style*="--aspect-ratio"] > :first-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+  }  
+}
+img.lazyLoad {
+  min-height: 400px;
+}
+
+nav ul a,
+nav .brand-logo {
+  color: #444;
+}
+
+p {
+  line-height: 2rem;
+}
+
+.sidenav-trigger {
+  color: #26a69a;
+}
+
+.parallax-container {
+  min-height: 500px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255,255,255,.9);
+}
+.parallax-container .section {
+  width: 100%;
+}
+.section {
+  margin: auto;
+}
+header {
+  font-size: 2rem;
+}
+
+@media only screen and (max-width : 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+  header, main, footer {
+    padding-left: 0;
+  }
+}
+
+@media only screen and (max-width : 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+footer.page-footer {
+  margin: 0;
+}
